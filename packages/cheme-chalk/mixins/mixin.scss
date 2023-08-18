@@ -1,0 +1,64 @@
+@import "../common/var.scss";
+
+// 提供方法
+@mixin b($block) {
+  $B: $namespace + $common-separator + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    .#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+@mixin m($modifier) {
+  @at-root {
+		#{&+$modifier-separator+$modifier} {
+			@content;
+		}
+	}
+}
+
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: '';
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector +
+      '.' +
+      $B +
+      $element-separator +
+      $unit +
+      ','};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+// 处理button-type
+@mixin button-type($color, $border-color, $background) {
+	color: $color;
+	border-color: $border-color;
+	background: $background;
+	border: none;
+}

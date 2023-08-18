@@ -1,0 +1,14 @@
+@import "./common/var.scss";  // 变量
+@import "./mixins/mixin.scss"; // 方法
+
+@include b(col)  {
+	@for $i from 0 through 24 { // chl-col-span-5
+		&.chl-col-span-#{$i} {
+			max-width: (calc(1 / 24) * $i * 100) * 1%;
+			flex: (calc(1 / 24) * $i * 100) * 1%;
+		}
+		&.chl-col-offset-#{$i} { //chl-col-offset-5
+			margin-left: (calc(1 / 24) * $i * 100) * 1%;
+		}
+	}
+}

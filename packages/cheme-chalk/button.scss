@@ -1,0 +1,61 @@
+@import "./common/var.scss";  // 变量
+@import "./mixins/mixin.scss"; // 方法
+
+@include b(button) {
+	display: inline-block;
+	line-height: 1;
+	min-height: 40px;
+	white-space: nowrap;
+	margin-left: 10px;
+	cursor: pointer;
+	outline: none;
+	padding: 0px 15px;
+	background: rgb(117, 115, 115);
+	vertical-align: middle;
+	border-radius: 5px;
+	// 嵌套中只要样式是icon
+	& [class*='#{$namespace}-icon-'] {
+    & + span {
+      margin-left: 5px;
+    }
+    svg {
+      vertical-align: bottom;
+    }
+  }
+	@include when(disabled) {
+		&,
+		&:hover,
+		&:focus {
+			cursor: not-allowed;
+			background-image: none;
+		}
+	}
+	 @include when(round) {
+		border-radius: 20px;
+	 }
+	 @include when(disabled) {
+		cursor: not-allowed;
+	 }
+	 @include when(loading) {
+		pointer-events: node;
+	 }
+	 @include m(primary) {
+		@include button-type($--color-white, $--color-primary, $--color-primary)
+	 }
+	 @include m(success) {
+		@include button-type($--color-white, $--color-success, $--color-success);
+		&:hover,
+		&:focus {
+			background: $--color-primary;
+			border-color: $--color-primary;
+			color: red;
+		}
+	}
+	 @include m(info) {
+		@include button-type($--color-white, $--color-info, $--color-info)
+	 }
+	 @include m(danger) {
+		@include button-type($--color-white, $--color-danger, $--color-danger)
+	 }
+}
+

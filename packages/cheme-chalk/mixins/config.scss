@@ -1,0 +1,5 @@
+$namespace: 'chl'; // 修饰命名空间
+$common-separator: '-' !default;
+$element-separator: '__'; // 局部
+$modifier-separator: '--'; // 修饰类型的
+$state-prefix: 'is-'; // 状态

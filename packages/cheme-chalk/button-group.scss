@@ -1,0 +1,15 @@
+@import "./common/var.scss";  // 变量
+@import "./mixins/mixin.scss"; // 方法
+
+@include b(button-group) {
+	& > .#{$namespace}-button {
+		&:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		&:last-child {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@import "./common/var.scss";  // 变量
+@import "./mixins/mixin.scss"; // 方法
+
+@include b(row)  {
+	width: 100%;
+	 display: flex;
+	 flex-wrap: wrap;
+	 // 添加is-
+	 @include when(justify-end) {
+		justify-content: flex-end;
+	 }
+	 @include when(justify-space-around) {
+		justify-content: space-around;
+	 }
+}

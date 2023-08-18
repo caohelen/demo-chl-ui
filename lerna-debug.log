@@ -1,0 +1,19 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '6.6.2',
+0 silly argv   '$0': 'lerna',
+0 silly argv   name: 'checkboxGroup'
+0 silly argv }
+1 notice cli v6.6.2
+2 verbose rootPath /Users/caohailin/Documents/study-project/chl-ui
+3 warn ENOREMOTE No git remote found, skipping repository property
+4 error Error: canceled
+4 error     at Interface.<anonymous> (/usr/local/share/.config/yarn/global/node_modules/read/lib/read.js:66:13)
+4 error     at Interface.emit (node:events:513:28)
+4 error     at Interface._ttyWrite (node:readline:1085:16)
+4 error     at ReadStream.onkeypress (node:readline:291:10)
+4 error     at ReadStream.emit (node:events:513:28)
+4 error     at emitKeys (node:internal/readline/utils:357:14)
+4 error     at emitKeys.next (<anonymous>)
+4 error     at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+4 error     at ReadStream.emit (node:events:513:28)

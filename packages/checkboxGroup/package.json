@@ -1,0 +1,22 @@
+{
+  "name": "@chl-ui/check-box-group",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "曹海霖 <caohenlen@163.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/checkBoxGroup.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://packages.aliyun.com/618cb59cba5e0db70ee6b363/npm/npm-registry/"
+  },
+  "scripts": {
+    "test": "node ./__tests__/checkBoxGroup.test.js"
+  }
+}

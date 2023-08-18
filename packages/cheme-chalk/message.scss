@@ -1,0 +1,30 @@
+@import "./common/var.scss";  // 变量
+@import "./mixins/mixin.scss"; // 方法
+
+@include b(message) {
+	display: flex;
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	transform: translate(-50%);
+	min-width: 300px;
+	border-radius: 5px;
+	height: 40px;
+	line-height: 40px;
+	background: red;
+	transition: all 0.4s,to;
+	color: #fff;
+	@include m(success) {
+		background: $--color-success;
+	}
+	@include m(info) {
+		background: $--color-info;
+	}
+	@include when(center) {
+		justify-content: center;
+	}
+}
+
+.chl-message-fade-enter-from, .chl-message-fade-leave-to {
+	transform: translate(-50%, -100%);
+}
